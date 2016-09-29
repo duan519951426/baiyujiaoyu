@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'cuheiti';
+    src: url('./cuheiti.eot');
+    src:
+            url('./cuheiti.ttf') format('truetype'),
+            url('./cuheiti.eot?#font-spider') format('embedded-opentype'),
+            url('./cuheiti.woff') format('woff'),
+            url('./cuheiti.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.f{
+    font-family: 'cuheiti';
+}

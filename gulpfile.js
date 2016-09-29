@@ -114,8 +114,8 @@ gulp.task('ecma6', ()=>{
         .pipe(gulp.dest(build));
 });
 /* CoffeeScript */
-gulp.task('coffee', ()=>{
-    const src = `${dirname}/src/coffee/**/*.coffee`,
+/*gulp.task('coffee', ()=>{
+    const src = `${dirname}/src/coffee/!**!/!*.coffee`,
         build = `${dirname}/build/js`;
     gulp.src(src)
         .pipe(changed(build, {
@@ -129,10 +129,10 @@ gulp.task('coffee', ()=>{
         .pipe(utf8convert())
         .pipe(bom())
         .pipe(gulp.dest(build));
-});
+});*/
 /* react */
-gulp.task('react', ()=>{
-    const src = `${dirname}/src/jsx/**/*.jsx`,
+/*gulp.task('react', ()=>{
+    const src = `${dirname}/src/jsx/!**!/!*.jsx`,
         build = `${dirname}/build/js`;
     gulp.src(src)
         .pipe(changed(build, {
@@ -149,7 +149,7 @@ gulp.task('react', ()=>{
         .pipe(utf8convert())
         .pipe(bom())
         .pipe(gulp.dest(build));
-});
+});*/
 /* 图片 */
 gulp.task('img', ()=>{
     const src = `${dirname}/src/img/**/*.*`,
@@ -180,8 +180,8 @@ gulp.task('browser-sync', ()=>{
     gulp.watch(`${dirname}/src/sass/**/*.sass`, ['sass', 'reload']);
     gulp.watch(`${dirname}/src/js/**/*.js`, ['js', 'reload']);
     gulp.watch(`${dirname}/src/es/**/*.js`, ['ecma6', 'reload']);
-    gulp.watch(`${dirname}/src/coffee/**/*.coffee`, ['coffee', 'reload']);
-    gulp.watch(`${dirname}/src/jsx/**/*.jsx`, ['react', 'reload']);
+    //gulp.watch(`${dirname}/src/coffee/**/*.coffee`, ['coffee', 'reload']);
+    //gulp.watch(`${dirname}/src/jsx/**/*.jsx`, ['react', 'reload']);
 });
 /* 默认 */
-gulp.task('default', ['html', 'jade', 'css', 'sass', 'js', 'ecma6', 'coffee', 'react', 'img', 'browser-sync']);
+gulp.task('default', ['html', 'jade', 'css', 'sass', 'js', 'ecma6', /*'coffee', 'react', */'img', 'browser-sync']);

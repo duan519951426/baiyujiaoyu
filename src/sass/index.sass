@@ -1,0 +1,315 @@
+// ---------- css reset ---------- //
+body, dl, dd, figure, hr, h1, h2, h3, h4, h5, h6, p, pre
+  margin: 0
+ul, ol
+  margin: 0
+  padding: 0
+  list-style: none
+th, td, textarea, input, button
+  padding: 0
+a
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+  img
+    border: none\9
+.clearfix
+  *zoom: 1
+  &:after
+    content: '\200B'
+    display: block
+    height: 0
+    clear: both
+// ---------- 自定义字体 ---------- //
+@mixin fontFace($name, $url: '.')
+  font-family: '#{$name}'
+  src: url('#{$url}/#{$name}.eot')
+  src: url('#{$url}/#{$name}.ttf') format('truetype'), url('#{$url}/#{$name}.eot?#font-spider') format('embedded-opentype'), url('#{$url}/#{$name}.woff') format('woff'), url('#{$url}/#{$name}.svg') format('svg')
+  font-weight: normal
+  font-style: normal
+$url: '../font'
+/* 粗灰体 */
+@font-face
+  @include fontFace('cuheiti', $url)
+/* 清茶楷体 */
+@font-face
+  @include fontFace('qingchakaiti', $url)
+// ---------- 变量 ---------- //
+$windowWidth: 1200px
+// ---------- index ---------- //
+body
+  font-family: '微软雅黑'
+  background-image: url('../img/bg.jpg')
+/* 轮播图 */
+.banner
+  position: relative
+  height: 536px
+  min-width: $windowWidth
+.banner-box
+  position: absolute
+  z-index: 1
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  overflow: hidden
+.banner-image
+  height: 100%
+  background-repeat: no-repeat
+  background-position: center top
+  a
+    float: left
+    display: block
+    height: 100%
+.banner-choice
+  position: relative
+  z-index: 1
+  padding-top: 27px
+  border-top: 4px solid #69a3d8
+  height: 13px
+  font-size: 0
+  text-align: center
+  background-image: url('../img/sanjiao.png')
+  background-repeat: no-repeat
+  background-position: center top
+  li
+    display: inline-block
+    *display: inline
+    *zoom: 1
+    width: 13px
+    height: 13px
+    margin: 0 5px
+    background-color: #69a3d8
+    cursor: pointer
+  li.thisIndex
+    background-color: #ff7a1b
+/* 导航栏 */
+.nav
+  position: relative
+  z-index: 2
+  margin-top: -93px
+  height: 49px
+  background-color: rgba(0, 0, 0, .5)
+.nav-box
+  width: $windowWidth
+  margin: 0 auto
+.nav-group
+  float: left
+  width: 122px
+  height: 100%
+  margin: 0 17px
+  &:hover
+    .nav-hrefs
+      display: block
+    .nav-title
+      border-bottom-color: #fff
+.nav-title
+  width: 100%
+  height: 47px
+  font-size: 18px
+  line-height: 47px
+  border-bottom: 2px solid
+  border-bottom-color: transparent
+  text-align: center
+  cursor: pointer
+  a
+    display: block
+    width: 100%
+    height: 100%
+    &:hover
+      text-decoration: none
+.nav-title, .nav-title a
+  color: #fff
+.nav-hrefs
+  display: none
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  height: 60px
+  margin-top: 49px
+  font-size: 16px
+  overflow: hidden
+  background-color: rgba(18, 74, 125, .5)
+.nav-a
+  width: 1200px
+  margin: 0 auto
+  height: 100%
+  text-align: center
+  a
+    float: left
+    display: block
+    padding: 0 10px
+    min-width: 102px
+    height: 54px
+    margin: 0 17px
+    border-bottom: 2px solid
+    border-bottom-color: transparent
+    line-height: 54px
+    color: #fff
+    &:hover
+      text-decoration: none
+      border-bottom-color: #fff
+/* 布局 */
+.layout
+  width: $windowWidth
+  margin: 115px auto 63px
+.layout-title
+  h2
+    float: left
+    font: 30px 'cuheiti'
+    padding: 14px 28px 0 0
+    font-weight: normal
+    color: #69a3d8
+    background-image: url('../img/titlebg.png')
+    background-repeat: no-repeat
+    background-position: right center
+.layout-title-more
+  float: right
+  display: block
+  margin-top: 10px
+  width: 30px
+  height: 30px
+  background-image: url('../img/more.png')
+  background-repeat: no-repeat
+  background-position: center center
+.layout-title-text
+  float: left
+  margin: 16px 0 0 37px
+  font-size: 20px
+  a:hover
+    color: #ff7a1b
+.layout-title-text, .layout-title-text a
+  color: #666
+.float-l
+  float: left
+/* 关于我们 */
+.title-guanyuwomen
+  margin-bottom: 40px
+.group-guanyuwomen
+  padding: 0 55px
+  margin-bottom: 53px
+.group-guanyuwomen-img
+  display: block
+  width: 534px
+  height: 342px
+  border: 1px solid #ccc
+  &:hover
+    text-decoration: none
+  img
+    display: block
+    width: 100%
+    height: 100%
+  p
+    position: relative
+    z-index: 1
+    width: 100%
+    height: 43px
+    margin-top: -43px
+    font-size: 22px
+    line-height: 43px
+    text-align: center
+    color: #fff
+    background-color: rgba(0, 0, 0, .6)
+.group-guanyuwomen-article
+  width: 502px
+  margin-left: 50px
+  font-size: 16px
+  color: #555
+  p
+    text-indent: 2em
+    margin-bottom: 18px
+    line-height: 25px
+    &:last-child
+      margin-bottom: 0
+.byjy
+  margin-right: 7px
+  font: 28px 'qingchakaiti'
+  color: #ff7a1b
+/* 产品与解决方案 */
+@import './_modules/_icon-f'
+.title-chanpinyujiejuefangan
+  margin-bottom: 38px
+.group-chanpinyujiejuefangan
+  padding: 0 55px
+  margin-bottom: 37px
+  li
+    float: left
+    position: relative
+    width: 347px
+    height: 108px
+    padding-left: 104px
+    color: #555
+  i
+    position: absolute
+    left: 0
+    top: 12px
+    border: 2px solid #69a3d8
+    border-radius: 82px
+  h4
+    margin-bottom: 14px
+    font-size: 20px
+    font-weight: normal
+  p
+    font-size: 14px
+    line-height: 22px
+.group-chanpinyujiejuefangan-r
+  margin-right: 180px
+.group-chanpinyujiejuefangan-b
+  margin-bottom: 65px
+/* 典型案例 */
+.title-dianxinganli
+  margin-bottom: 59px
+.group-dianxinganli
+  position: relative
+  margin-bottom: 77px
+.group-dianxinganli-box
+  position: relative
+  z-index: 1
+  width: 1045px
+  height: 277px
+  margin: 0 auto
+.group-dianxinganli-btnl, .group-dianxinganli-btnr
+  position: absolute
+  top: 100px
+  width: 54px
+  height: 81px
+  border: none
+  border-radius: 5px
+  background-color: #ececec
+  background-repeat: no-repeat
+  background-position: center center
+  cursor: pointer
+.group-dianxinganli-btnl
+  left: 0
+  background-image: url('../img/left.png')
+.group-dianxinganli-btnr
+  right: 0
+  background-image: url('../img/right.png')
+/* 招贤纳士和联系我们 */
+.margin-b
+  margin-bottom: 30px
+/* 招贤纳士 */
+.group-zhaoxiannashi
+  width: 710px
+.group-zhaoxiannashi-box
+  margin-left: 54px
+  p
+    font-size: 16px
+    color: #555
+    text-indent: 2em
+    line-height: 30px
+    margin-bottom: 42px
+  img
+    display: block
+    width: 100%
+/* 联系我们 */
+@import './_modules/_icon-c'
+.group-lianxiwomen
+  width: 400px
+  margin-left: 40px
+.group-lianxiwomen-address
+  font-style: normal
+  color: #555
+  p
+    margin-bottom: 11px

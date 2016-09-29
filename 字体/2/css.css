@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'qingchakaiti';
+    src: url('./qingchakaiti.eot');
+    src:
+            url('./qingchakaiti.ttf') format('truetype'),
+            url('./qingchakaiti.eot?#font-spider') format('embedded-opentype'),
+            url('./qingchakaiti.woff') format('woff'),
+            url('./qingchakaiti.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.f{
+    font-family: 'qingchakaiti';
+}
