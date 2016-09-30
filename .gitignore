@@ -43,5 +43,6 @@ jspm_packages
 # webstorm
 .idea
 build/css
+build/img
 build/js
 build/html
