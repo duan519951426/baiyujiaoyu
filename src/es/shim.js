@@ -45,5 +45,10 @@
         };
     })();
 
+    // 动画
+    shim.animate = (element, target, type, speed, unit, callback)=>{
+        const start = element.style[type];
+    };
+
     _window._shim = shim;
 })(window);
