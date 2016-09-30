@@ -7,16 +7,14 @@ html
         meta(http-equiv='X-UA-Compatible' content='IE=edge, chrome=1')
         link(href='../css/index.css' rel='stylesheet')
         title 百育教育
+        script(src='../js/shim.js')
     body
         // 轮播
         section
-            div.banner(style='background-color: #ba7f00;')
+            div.banner
                 div.banner-box
                     div.banner-image.clearfix
             ul.banner-choice
-                li
-                li
-                li
         // 导航栏
         section.nav
             nav.nav-box.clearfix
@@ -108,7 +106,7 @@ html
             section.group-dianxinganli
                 input.group-dianxinganli-btnl(type='button')
                 input.group-dianxinganli-btnr(type='button')
-                div.group-dianxinganli-box(style='background-color: #ba7f00;')
+                div.group-dianxinganli-box
             // 招贤纳士和联系我们
             div.clearfix
                 // 招贤纳士
@@ -128,12 +126,72 @@ html
                         address.group-lianxiwomen-address
                             p
                                 i.syin2.syin-c1
+                                span 咨询电话：024-86518307
                             p
                                 i.syin2.syin-c2
+                                span 邮政编码：110034
                             p
                                 i.syin2.syin-c3
+                                span 公司邮箱：info@baiyu-edu.com
                             p
                                 i.syin2.syin-c4
+                                span 公司网址：www.baiyu-edu.com
                             p
                                 i.syin2.syin-c5
+                                span 公司地址：沈阳市于洪区白山路16号广信大厦3楼
+                        div.baidumaps#baidumaps
+        // footer
+        footer.footer
+            div.footer-box
+                table.nav-maps
+                    tr
+                        td
+                            a(href='#') 首页
+                        td
+                            a(href='#') 关于我们
+                        td
+                            a(href='#') 新闻中心
+                        td
+                            a(href='#') 产品与解决方案
+                        td
+                            a(href='#') 典型案例
+                        td
+                            a(href='#') 招贤纳士
+                        td
+                            a(href='#') 联系我们
+                    tr
+                        td
+                        td
+                            a(href='#') 企业简介
+                        td
+                            a(href='#') 行业动态
+                        td
+                            a(href='#') 专业建设
+                        td
+                            a(href='#') 典型案例
+                        td
+                            a(href='#') 招聘信息
+                        td
+                    tr
+                        td
+                        td
+                            a(href='#') 企业管理
+                        td
+                            a(href='#') 企业新闻
+                        td
+                            a(href='#') 实训设备
+                        td(colspan='3')
+                    tr
+                        td
+                        td
+                            a(href='#') 企业文化
+                        td
+                        td
+                            a(href='#') 信息化教学
+                        td(colspan='3')
+                i.sanjiao
+                p.footer-copy 版权所有：辽宁百育教育科技有限公司
+        // js
+        script(src='http://api.map.baidu.com/api?v=2.0&ak=3DaVKoffyCbaa1o58bfFc8tw4EdfxPV7')
+        script(src='../js/baidumaps.js')
 
