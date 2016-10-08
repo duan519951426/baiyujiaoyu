@@ -186,6 +186,8 @@ body
   color: #666
 .float-l
   float: left
+.float-r
+  float: right
 /* 关于我们 */
 .title-guanyuwomen
   margin-bottom: 40px
@@ -272,6 +274,30 @@ body
   width: 1045px
   height: 277px
   margin: 0 auto
+  a
+    display: block
+    position: absolute
+    top: 20px
+    width: 426px
+    height: 230px
+    font-size: 16px
+    color: #fff
+    text-align: center
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, .6)
+    &:hover
+      text-decoration: none
+  p
+    position: relative
+    z-index: 1
+    width: 100%
+    height: 30px
+    margin-top: -30px
+    line-height: 30px
+    background-color: rgba(0, 0, 0, .4)
+  img
+    display: block
+    width: 100%
+    height: 100%
 .group-dianxinganli-btnl, .group-dianxinganli-btnr
   position: absolute
   top: 100px
@@ -310,7 +336,7 @@ body
 /* 联系我们 */
 @import './_modules/_icon-c'
 .group-lianxiwomen
-  width: 400px
+  width: 420px
   margin-left: 40px
 .group-lianxiwomen-address
   font-style: normal

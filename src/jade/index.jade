@@ -6,37 +6,15 @@ html
         meta(name='renderer' content='webkit')
         meta(http-equiv='X-UA-Compatible' content='IE=edge, chrome=1')
         link(href='../css/index.css' rel='stylesheet')
-        script(src='../js/shim.js')
+        link(href='../img/favicon.png' rel='shortcut icon' type='image/x-icon')
         title 百育教育
     body
-        script.
-            window._config = {
-                "banner": [
-                    {
-                        "image": "../img/_/br0.jpg",
-                        "href": "#"
-                    },
-                    {
-                        "image": "../img/_/br1.jpg",
-                        "href": "#"
-                    },
-                    {
-                        "image": "../img/_/br2.jpg",
-                        "href": "#"
-                    },
-                    {
-                        "image": "../img/_/br3.jpg",
-                        "href": "#"
-                    }
-                ]
-            };
         // 轮播
         section
             div.banner
                 div.banner-box
                     div.banner-image.clearfix#banner-image
             ul.banner-choice#banner-choice
-            script(src='../js/banner.js')
         // 导航栏
         section.nav
             nav.nav-box.clearfix
@@ -126,9 +104,9 @@ html
                 h2 典型案例
                 a.layout-title-more(href='#' title='查看更多')
             section.group-dianxinganli
-                input.group-dianxinganli-btnl(type='button')
-                input.group-dianxinganli-btnr(type='button')
-                div.group-dianxinganli-box
+                input.group-dianxinganli-btnl#dianxinganli-btn-left(type='button')
+                input.group-dianxinganli-btnr#dianxinganli-btn-right(type='button')
+                div.group-dianxinganli-box#dianxinganli-box
             // 招贤纳士和联系我们
             div.clearfix
                 // 招贤纳士
@@ -140,7 +118,7 @@ html
                         p 公司是船，人才是帆，欢迎广大业内精英加入我公司，与我们携手共创辉煌！以下是我司最新招聘需求职位，如无合适职位，您亦可将简历发至如下邮箱：info@baiyu-edu.com，应聘百育教育科技有限公司职位请发送邮件至：info@baiyu-edu.com，进入百育人才库，一旦有合适职位，我们会尽快和您取得联系。
                         img(src='../img/_/2.jpg')
                 // 联系我们
-                div.float-l.group-lianxiwomen
+                div.float-r.group-lianxiwomen
                     section.layout-title.margin-b.clearfix
                         h2 联系我们
                         a.layout-title-more(href='#' title='查看更多')
@@ -213,7 +191,25 @@ html
                         td(colspan='3')
                 i.sanjiao
                 p.footer-copy 版权所有：辽宁百育教育科技有限公司
+        script.
+            window._config = {
+                "banner": [
+                    {"image": "../img/_/br0.jpg", "href": "#"},
+                    {"image": "../img/_/br1.jpg", "href": "#"},
+                    {"image": "../img/_/br2.jpg", "href": "#"},
+                    {"image": "../img/_/br3.jpg", "href": "#"}
+                ],
+                "anli": [
+                    {"image": "../img/_/c1.png", "href": "#", "text": "校企业合作模式"},
+                    {"image": "../img/_/c2.png", "href": "#", "text": "实训教材开放"},
+                    {"image": "../img/_/c3.png", "href": "#", "text": "化工可视综合仿真装置"},
+                    {"image": "../img/_/c4.png", "href": "#", "text": "大工厂"}
+                ]
+            };
         // js
+        script(src='../js/shim.js')
+        script(src='../js/banner.js')
+        script(src='../js/dianxinganli.js')
         script(src='http://api.map.baidu.com/api?v=2.0&ak=3DaVKoffyCbaa1o58bfFc8tw4EdfxPV7')
         script(src='../js/baidumaps.js')
 

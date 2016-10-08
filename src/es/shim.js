@@ -33,21 +33,51 @@
 
     // 动画
     shim.requestAnimationFrame = (()=>{
-        return _window.requestAnimationFrame ? _window.requestAnimationFrame : (fun)=>{
-            return setTimeout(fun, 100);
-        };
+        if(_window.requestAnimationFrame){
+            return (fun)=>{
+                return requestAnimationFrame(fun);
+            };
+        }else{
+            return (fun)=>{
+                return setTimeout(fun, 100);
+            };
+        }
     })();
 
     // 移除定时器
     shim.cancelAnimationFrame = (()=>{
-        return _window.cancelAnimationFrame ? _window.cancelAnimationFrame : (v)=>{
-            clearTimeout(v);
-        };
+        if(_window.cancelAnimationFrame){
+            return (v)=>{
+                return cancelAnimationFrame(v);
+            };
+        }else{
+            return (fun)=>{
+                clearTimeout(v);
+            };
+        }
     })();
 
     // 动画
-    shim.animate = (element, target, type, speed, unit, callback)=>{
-        const start = element.style[type];
+    shim.animate = (element, type, target, time, unit, callback)=>{
+        // 提取数字
+        const number = number => Number(number.match(/-?\d+(\.\d+)?/g)[0]);
+
+        const start = number(element.style[type]);
+        const speed = (target - start) / time * 10;
+        const absspeed = Math.abs(speed);
+        const ani = ()=>{
+            const t = number(element.style[type]);
+            if(Math.abs(target - t) > absspeed){
+                element.style[type] = `${t + speed}${unit}`;
+                shim.requestAnimationFrame(ani);
+            }else{
+                element.style[type] = `${target}${unit}`;
+                if(callback){
+                    callback();
+                }
+            }
+        };
+        shim.requestAnimationFrame(ani);
     };
 
     _window._shim = shim;
